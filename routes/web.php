@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NumberController;
 use App\Http\Controllers\CryptoController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\SerieController;
+use App\Http\Controllers\LayoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,3 +83,13 @@ use App\Http\Controllers\CountryController;
 
 Route::post("/countries", [CountryController::class, "send"])
     ->name("countries.send");
+
+
+Route::get("/series", [SerieController::class, "index"])
+    ->name("series.index");
+
+Route::get("showSeries/{id}", [SerieController::class, "show"])
+    ->name("showSeries.show");
+
+Route::get("layouts", [LayoutController::class, "index"])
+    ->name("layouts.index");
